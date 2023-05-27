@@ -1,0 +1,32 @@
+{
+    "name": "Crawlex",
+    "version": "1.0.0",
+    "description": "Crawl possible valid URLs from websites using your browser",
+    "manifest_version": 3,
+    "author": "MohammedDief (demonia) @ Defendyx",
+
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Crawlex",
+        "default_icon": {
+            "16": "assets/icons/x.png",
+            "128": "assets/icons/x.png"
+        }
+    },
+
+    "host_permissions": [
+        "*://*/*"
+    ],
+
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["assets/javascript/crawler.js"]
+        }
+    ]
+}
