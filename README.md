@@ -46,7 +46,7 @@ Crawlex is a tool designed to assist bug bounty hunters in their work. It should
 
 ## Credits
 
-Crawlex was developed by Your Name. Special thanks to the open-source community for their valuable contributions and inspiration.
+Crawlex was developed by DefendyX team.
 
 ## Support
 
