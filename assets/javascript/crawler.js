@@ -121,7 +121,17 @@ function websiteCrawler(selector, currentUrl) { // The selector is usually the b
             var originUrl = new URL(currentUrl);
             var combined_url = `${originUrl.origin}/${url}`.replace(/\/\//g, '/'); // replace all to keep the urls clean not just the first one
             urls.push(combined_url);
+            continue
         }
+
+        if (!/^https?:\/\//i.test(url)) {
+            var originUrl = new URL(currentUrl);
+            var combined_url = `${originUrl.origin}/${url}`.replace(/\/\//g, '/'); // replace all to keep the urls clean not just the first one
+            urls.push(combined_url);
+            continue
+        }
+
+        if (url != null) urls.push(url);
     }
 
     // Filter the array from duplicates before returning it
