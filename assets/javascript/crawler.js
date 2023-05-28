@@ -34,11 +34,20 @@ function onWindowLoad() {
   
         // Loop through the URLs for the current page and append them to the container
         for (let i = startIndex; i < endIndex; i++) {
-          const url = urlsList[i];
-          var li = document.createElement('li');
-          li.className = 'list-group-item';
-          li.innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
-          urlsContainer.appendChild(li);
+            const url = urlsList[i];
+
+            if (url.length > 32) {
+                var viewUrl = url.slice(0, 32) + "...";
+                var li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `<a href="${url}" title="${url}" target="_blank">${viewUrl}</a>`;
+                urlsContainer.appendChild(li);
+            } else {
+                var li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `<a href="${url}" title="${url}" target="_blank">${url}</a>`;
+                urlsContainer.appendChild(li);
+            }
         }
       }
   
